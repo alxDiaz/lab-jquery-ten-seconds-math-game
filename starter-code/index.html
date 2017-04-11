@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
     <!--  Added Libraries -->
 
     <!-- Custom CSS -->
@@ -14,12 +16,67 @@
 
     <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
   <div class="row">
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    <div class="col-xs-6 col-md-4"></div>
+    <div class="col-xs-6 col-md-4">
+      <div class="container">
+      <h2>TEN SECONDS MATH GAME</h2>
+      <section id="game-options">
+      <h3>Game Options</h3>
+      <h4>Number Limit: <label id="labelLimit">10</label> </h4>
+      <input type="range" id="myRange" name="myRange" min="1" max="10" step="1" value="1" oninput="showValue(this.value)">
+      <div class="tableSelectos">
+        <h5>Operators<h5>
+        <table class="tableSize">
+          <tr>
+            <td><input type="checkbox" id="cbox1" value="add"><img class="icons" src="images/add.jpg" alt="addIcon"></td>
+            <td><input type="checkbox" id="cbox2" value="sub"><img class="icons" src="images/substract.jpg" alt="subIcon"></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cbox3" value="mul"><img class="icons" src="images/multiply.jpg" alt="multIcon"></td>
+            <td><input type="checkbox" id="cbox4" value="div"><img class="icons" src="images/divide.jpg" alt=divIcon></td>
+          </tr>
+        </table>
+        <button type="button" class="btn btn-primary" onclick="moveSections()">Start Game</button>
+
+      </div>
+    </section>
+    <section id="game-board">
+    <h4 id="secondsLeft"></h4>
+    <div>
+      <h3>
+        <label id="questionLabel">9 - 8</label>
+      </h3>
+      <input type="text" name="firstname" value="Answer">
+    </div>
+    </section>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+
+    </div>
   </div>
 
+<!-- ________________________ -->
+
+<div class="row">
+  <div class="col-xs-6 col-md-4"></div>
+  <div class="col-xs-6 col-md-4">
+    <div class="container">
+
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+  </div>
+</div>
+
+
+
+
     <!-- Custom JavaScript -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/application.js"></script>
 
   </body>
 </html>

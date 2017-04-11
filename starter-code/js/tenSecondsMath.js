@@ -1,5 +1,4 @@
 // Use this file to write the logic of your game, the needed attrs and functions
-
 var TenSecondsMathGame = function(options) {
     this.operator = options[0] ;
     this.limit = options[1];
@@ -48,7 +47,7 @@ TenSecondsMathGame.prototype.questionGenerator = function(){
       }
     }
 
-    var question = number1 + " "+ operator + " " + number2+ " ?";
+    var question = number1 + " "+ operator + " " + number2+ " = ?";
     var obj = {
       question:  question,
       answer: answer
@@ -57,6 +56,33 @@ TenSecondsMathGame.prototype.questionGenerator = function(){
     return obj;
 };
 
+function initializeGame(){
+
+  var limit = document.getElementById ( "labelLimit" ).innerText;
+  var arrayOperators = [];
+  var checkBox1 = document.getElementById('cbox1');
+  var checkBox2 = document.getElementById('cbox2');
+  var checkBox3 = document.getElementById('cbox3');
+  var checkBox4 = document.getElementById('cbox4');
+
+  if (checkBox1.checked){
+        arrayOperators.push("+");
+    }
+  if(checkBox2.checked){
+    arrayOperators.push("-");
+  }
+  if(checkBox3.checked){
+    arrayOperators.push("*");
+  }
+  if(checkBox4.checked){
+    arrayOperators.push("/");
+  }
+
+  var arrayGame = [arrayOperators, limit];
+
+  var a = new TenSecondsMathGame(arrayGame);
+
+}
 
 function startTimer() {
   // Counting down
